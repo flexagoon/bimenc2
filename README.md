@@ -7,7 +7,7 @@ A demonstration of basic text → image encryption.
 
 ## Usage
 ``` bash
-# Encrypting a number
+# Encrypting text
 dart run bin/bimenc2.dart -t <text> -f <filename>
 
 # Decrypting an image
