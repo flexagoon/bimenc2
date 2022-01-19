@@ -9,7 +9,9 @@ void encode(List<int> number, String filename, {bool invisible = false}) {
   } else {
     foreground = int.parse('ff000000', radix: 16);
   }
+  final background = int.parse('ffffffff', radix: 16)
   final image = Image(number.length, 9);
+  image.fill(background);
   number.asMap().forEach((column, amount) {
     for (int pixel = 0; pixel < amount; pixel++) {
       image.setPixel(column, 8 - pixel, foreground);
