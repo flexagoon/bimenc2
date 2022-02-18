@@ -3,12 +3,9 @@ import 'dart:io';
 import 'package:image/image.dart';
 
 void encode(List<int> number, String filename, {bool invisible = false}) {
-  int foreground;
-  if (invisible) {
-    foreground = int.parse('fffefefe', radix: 16);
-  } else {
-    foreground = int.parse('ff000000', radix: 16);
-  }
+  final foreground = invisible
+      ? int.parse('fffefefe', radix: 16)
+      : int.parse('ff000000', radix: 16);
   final background = int.parse('ffffffff', radix: 16);
   final image = Image(number.length, 9);
   image.fill(background);
@@ -21,12 +18,9 @@ void encode(List<int> number, String filename, {bool invisible = false}) {
 }
 
 List<int> decode(String filename, {bool invisible = false}) {
-  int foreground;
-  if (invisible) {
-    foreground = int.parse('fffefefe', radix: 16);
-  } else {
-    foreground = int.parse('ff000000', radix: 16);
-  }
+  final foreground = invisible
+      ? int.parse('fffefefe', radix: 16)
+      : int.parse('ff000000', radix: 16);
   final file = File(filename);
   final image = decodePng(file.readAsBytesSync())!;
   final List<int> decoded = [];
