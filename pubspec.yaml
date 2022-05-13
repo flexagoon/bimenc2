@@ -3,9 +3,9 @@ description: A demonstration of basic text to image encryption
 version: 1.0.1
 
 environment:
-  sdk: '>=2.14.3 <3.0.0'
+  sdk: ">=2.14.3 <3.0.0"
 
-dependencies: 
+dependencies:
   args: ^2.3.0
   image: ^3.1.1
 
